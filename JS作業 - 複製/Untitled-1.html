@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>返回最上面按鈕</title>
+  <style>
+    scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    window.onscroll = function() {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      var scrollToTopButton = document.getElementById("scrollToTopButton");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</head>
+<body>
+  <h1>返回最上面按鈕</h1>
+  <p>往下滾動頁面，當滾動超過 20px 時，將出現返回最上面的按鈕。</p>
+
+  <button id="scrollToTopButton" onclick="scrollToTop()">返回最上面</button>
+
+  <script>
+    // 初始載入時檢查滾動位置以顯示或隱藏返回最上面的按鈕
+    scrollFunction();
+  </script>
+</body>
+</html>

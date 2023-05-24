@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>會員功能</title>
+  <style>
+    /* 共用樣式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1, h2 {
+      color: #333;
+    }
+    
+    /* 導覽列樣式 */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .navbar h1 {
+      margin: 0;
+    }
+    
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    .navbar ul li {
+      margin-right: 10px;
+    }
+    
+    .navbar ul li:last-child {
+      margin-right: 0;
+    }
+    
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    
+    /* 內容區域樣式 */
+    .content {
+      padding: 20px;
+    }
+    
+    /* 登入表單樣式 */
+    .login-form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    .login-form input[type="text"],
+    .login-form input[type="password"],
+    .login-form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .login-form button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* 會員內容樣式 */
+    .member-content {
+      text-align: center;
+    }
+  </style>
+  <script>
+    function login() {
+      var username = document.getElementById("loginUsername").value;
+      var password = document.getElementById("loginPassword").value;
+      
+      // 在這裡執行登入相關的操作，例如驗證用戶名和密碼是否正確
+      if (username === "admin" && password === "password") {
+        console.log("登入成功！用戶名：" + username);
+        // 在這裡執行登入成功後的操作，例如顯示會員內容
+        showMemberContent();
+      } else {
+        console.log("登入失敗！請檢查用戶名和密碼。");
+      }
+      
+      // 清除登入表單
+      document.getElementById("loginUsername").value = "";
+      document.getElementById("loginPassword").value = "";
+    }
+
+    function logout() {
+      // 在這裡執行登出相關的操作，例如清除用戶的登入狀態
+      console.log("已登出！");
+      // 在這裡執行登出後的操作，例如隱藏會員內容
+      hideMemberContent();
+    }
+    
+    function showMemberContent() {
+      document.getElementById("memberContent").style.display = "block";
+    }
+    
+    function hideMemberContent() {
+      document.getElementById("memberContent").style.display = "none";
+    }
+  </script>
+</head>
+<body>   
+    <div class="login-form">
+      <h2>會員登入</h2>
+      <input type="text" id="loginUsername" placeholder="用戶名">
+      <input type="password" id="loginPassword" placeholder="密碼">
+      <button onclick="login()">登入</button>
+    </div>
+    
+    <div id="memberContent" class="member-content" style="display: none;">
+      <h2>會員內容</h2>
+      <p>歡迎回來！您可以在這裡找到更多有關城市的相關資訊。</p>
+      <button onclick="logout()">登出</button>
+    </div>
+  </div>
+</body>
+</html>

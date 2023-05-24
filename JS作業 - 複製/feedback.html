@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clothing store</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+               
+</head>
+    <body style="background:lightblue;">
+        <div style="width: 100%;height: 90px;"></div>
+        <div id="navbar" class="navbar" >
+            <a href="index.html">
+                <h2>回首頁</h2>
+            </a>
+   
+        </div>   
+        
+        <div class="shopping-cart" id="shopping-cart"></div>
+    
+        <div class="bottombar" id="bottombar">
+            <a href="feedback.html"><div id="bottombaritem" class="bottombaritem" style="margin-left: -150px;">意見回饋</div></a>
+            <a href="aboutUs.html"><div id="bottombaritem2" class="bottombaritem" style="margin-left: -50px;">聯絡我們</div></a>
+            <a href="member.html"><div id="bottombaritem3" class="bottombaritem" style="margin-left: 50px;">會員專區</div></a>
+            <a href="aboutUs.html"><div id="bottombaritem4" class="bottombaritem" style="margin-left: 150px;">商品分類</div></a>
+            <a href="cart.html">
+                <div class="cart">
+                    <i class="bi bi-cart4"></i>
+                    <div id="cartAmount" class="cartAmount">0</div>
+                </div>    
+            </a>
+        </div>
+        <div id="container" >
+            <h1>表單回饋</h1>
+            <form class="formcss">
+                    <div class="word" > 電郵:</div>
+                    <input type="email" required placeholder="請輸入電子郵件需含@字樣" />
+                    <span class="ok">ok</span><br/>
+                    <div class="word" > 電話:</div>
+                    <input type="text" required placeholder="+886" pattern="[0-9]{8,10}"/>
+                    <span class="ok">ok</span><br/>
+                    <span class="radioBox">
+                        <div  > 男:</div>
+                        <input type="radio" name="gender" value="male" required/>
+                        <div class="radioBox" > 女:</div>
+                        <input type="radio" name="gender" value="female" required/>
+                    </span>
+                    <div class="word" > 下次還會回購嗎?</div>
+                    <select required>
+                        <option value="會">會</option>
+                        <option value="不會">不會</option>
+                        </select>
+                    <br/>
+                    <div class="word">
+                        <span>
+                            <label for="question">喜歡哪些商品:</label>
+                            <input type="checkbox" name="type1" value="cloth1">韓系縮口棉褲
+                            <input type="checkbox" name="type1" value="cloth1">修身直筒工裝褲
+                            <input type="checkbox" name="type1" value="cloth1">反車線短版單寧夾克
+                            <input type="checkbox" name="type1" value="cloth1">痕落地卡其褲
+                            <input type="checkbox" name="type1" value="cloth1">修身直筒西裝褲
+                            <input type="checkbox" name="type1" value="cloth1">質感棉落地褲
+                            <input type="checkbox" name="type2" value="cloth2">縮口修身西裝褲-灰
+                            <input type="checkbox" name="type3" value="cloth3">深色水洗牛仔褲
+                            <input type="checkbox" name="type3" value="cloth4">排釦落地牛仔褲
+                        </span>
+                    </div> 
+                    <div class="word" > 其他建議:</div>
+                    <textarea cols="50" rows="5"></textarea>
+                    </br>
+                    <input type="submit" 
+                            value="送出資料" 
+                                onclick="sendMassage()">    
+            </form>
+        </div>    
+    </body>
+    <script src="src/data.js"></script>
+    <script src="src/main.js"></script>
+    <script>
+        function sendMassage(){
+            alert("您的寶貴意見已確實沒有收到");
+        }
+    </script>
+</html>
